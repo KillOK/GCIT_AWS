@@ -1,0 +1,47 @@
+<div class="container marketing" ng-Controller="genreController">
+
+	<h4>Enter Genre Details</h4>
+	<br>
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text">Genre Name</span>
+		</div>
+		<input type="text" aria-label="Genre Name" class="form-control"
+			ng-model="genre.genreName">
+	</div>
+
+	<br>
+
+	<br>
+
+	<!-- ---------------------------------------------------------------------------------------------------- -->
+
+	<div class="input-group-prepend">
+		<p class="input-group-text " style="text-align: center; width: 121px;">
+			<span class="mx-auto">Select books</span>
+		</p>
+		<select class="form-control" multiple ng-model="bookList">
+			
+			<option ng-repeat="b in books track by $index "
+				value={{$index}} >{{b.title}}</option>
+		</select>
+	</div>
+	<p style="color:green;"> books selected = {{bookList}}</p>
+	<!-- ---------------------------------------------------------------------------------------------------- -->
+
+	<br> <br>
+
+	<div class="input-group">
+		<p class="input-group-text w-25 ">
+			<span class="mx-auto " style="overflow-x: hidden;">Select your
+				action: </span>
+		</p>
+		<button style="text-align: center; width: 121px;" type="button"
+			class="btn btn-secondary mx-auto w-25" ng-click="saveGenre()" >Save</button>
+		<a style="text-align: center; width: 121px;"
+			class="btn btn-secondary mx-auto w-25" href="#/genresCRUD"
+			role="button">Cancel</a>
+	</div>
+
+</div>
+

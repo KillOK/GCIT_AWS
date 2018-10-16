@@ -1,0 +1,62 @@
+<div class="container marketing" ng-Controller="authorController">
+
+	<h4>Enter Author Details</h4>
+	<br>
+	<div class="input-group">
+		<div class="input-group-prepend">
+			<span class="input-group-text">Author Name</span>
+		</div>
+		<input type="text" aria-label="Author Name" class="form-control"
+			ng-model="author.authorName">
+	</div>
+
+	<br>
+
+	<br>
+
+	<!-- ---------------------------------------------------------------------------------------------------- -->
+
+	<!-- <div class="input-group-prepend">
+		<p class="input-group-text " style="text-align: center; width: 121px;">
+			<span class="mx-auto">Select books</span>
+		</p>
+		<select class="form-control" multiple ng-model="selectedBooks">
+			
+			<option ng-repeat="b in books track by $index "
+				value="{{books[$index]}}">{{b.title}}</option>
+		</select>
+	</div>
+	<p style="color:green;"> selectedProgramming = {{selectedBooks}}</p> -->
+	
+	<!-- ---------------------------------------------------------------------------------------------------- -->
+	
+	
+	<div class="input-group-prepend">
+		<p class="input-group-text " style="text-align: center; width: 121px;">
+			<span class="mx-auto">Select books</span>
+		</p>
+		<select class="form-control" multiple ng-model="selectedBooks">
+		
+			<option ng-repeat="b in books track by $index "
+				value="{{books[$index]}}">{{b.title}}</option>
+		</select>
+	</div>
+	<p style="color:green;"> books selected = {{selectedBooks}}</p>
+	<!-- ---------------------------------------------------------------------------------------------------- -->
+
+	<br> <br>
+
+	<div class="input-group">
+		<p class="input-group-text w-25 ">
+			<span class="mx-auto " style="overflow-x: hidden;">Select your
+				action: </span>
+		</p>
+		<button style="text-align: center; width: 121px;" type="button"
+			class="btn btn-secondary mx-auto w-25" ng-click="saveAuthor()" >Save</button>
+		<a style="text-align: center; width: 121px;"
+			class="btn btn-secondary mx-auto w-25" href="#/authorsCRUD"
+			role="button">Cancel</a>
+	</div>
+
+</div>
+
