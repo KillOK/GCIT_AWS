@@ -20,6 +20,8 @@ import com.killok.librarian.dao.BookDAO;
 import com.killok.librarian.dao.BookLoanDAO;
 import com.killok.librarian.dao.BorrowerDAO;
 import com.killok.librarian.dao.LibBranchDAO;
+import com.killok.librarian.entity.Author;
+import com.killok.librarian.entity.Book;
 import com.killok.librarian.entity.BookCopy;
 import com.killok.librarian.entity.BookLoan;
 import com.killok.librarian.entity.Borrower;
@@ -71,6 +73,30 @@ public class BorrowerService {
 		List<Borrower> borrowers = new ArrayList<>();
 		try {
 			borrowers = bordao.readAllBorrowers();
+			return borrowers;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@RequestMapping(value = "/lms/books", method = RequestMethod.GET, produces = "application/json")
+	public List<Book> getBooks() {
+		List<Book> borrowers = new ArrayList<>();
+		try {
+			borrowers = bdao.readAllBooks();
+			return borrowers;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	@RequestMapping(value = "/lms/authors", method = RequestMethod.GET, produces = "application/json")
+	public List<Author> getAuthors() {
+		List<Author> borrowers = new ArrayList<>();
+		try {
+			borrowers = adao.readAllAuthors();
 			return borrowers;
 		} catch (Exception e) {
 			e.printStackTrace();

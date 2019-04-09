@@ -1,0 +1,22 @@
+var LibraryApp = angular.module("LibraryApp", ["ngRoute", 'simplePagination']);
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

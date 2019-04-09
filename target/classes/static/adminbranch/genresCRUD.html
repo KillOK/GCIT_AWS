@@ -1,0 +1,30 @@
+<div class="container marketing" ng-Controller="genreController">
+
+	<a href="#/addgenre"><button  class="btn btn-secondary" href="#/addgenre" role="button">ADD GENRE</button></a>
+	<br>
+	<br>
+
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Books</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="g in genres | orderBy: 'genreName'">
+                <td ><!--{{a.authorId}}--> {{$index+1}}</th>
+                <td scope="col">{{g.genreName}}</td>
+                
+                <td scope="col"><span ng-repeat="b in g.books track by $index">{{b.title==null? b.bookId :b.title}} <span ng-if="!$last">,</span> </span></td>
+                <td scope="col"><button type="button" class="btn btn-secondary" ng-click="editGenre(g)">Edit</button></td>
+                <td scope="col"><button type="button" class="btn btn-dark" ng-click="deleteGenre(g.genreId)">Delete</button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</div>
