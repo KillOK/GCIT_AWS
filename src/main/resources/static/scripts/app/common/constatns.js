@@ -1,6 +1,6 @@
 LibraryApp.constant("libConstants", {
-    LIB_HOST:"http://127.0.0.1:8081",
-    ADMIN_RS_HOST:"http://127.0.0.1:8081",
+    LIB_HOST:"http://http://54.86.161.5:8081",
+    ADMIN_RS_HOST:"http://http://54.86.161.5:8081",
     
     AUTHOR_CRUD:"/lms/saveAuthor",
     GENRE_CRUD:"/lms/updateGenre",
